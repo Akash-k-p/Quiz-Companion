@@ -3,8 +3,32 @@
     "version": "1.0.0",
     "name": "Companion for quizzes",
     "description": "This extension is a companion for quizzes",
-    
+    "icons" :{
 
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+    },
+    
+    "action" : {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "icon16.png"}
+        } ,
+     
+    "background": {
+        "service_worker": "eventPage.js"
+    },
+    
+    "content_scripts" :[{
+        "matches" : ["https://www.sanfoundry.com/foundry-questions-answers-quiz/*","https://onlinecourses.nptel.ac.in/*"],
+        "js" : ["content.js","jquery-3.7.0.min.js"]
+        
+    } ],
+
+    "permissions": [
+        "tabs" 
+    ]
     
 
 
